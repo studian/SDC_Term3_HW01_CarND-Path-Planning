@@ -1,10 +1,27 @@
 # CarND-Path-Planning-Project
 Self-Driving Car Engineer Nanodegree Program
 
+### Lane Change
+
+* I used FSM(finite state machine) as follow `changeLane()` function. 
+* I simply set 3 states.  
+    * Keep Lane
+    * Lane Changing Left
+    * Lane Changing Right
+* If a distance of my car and my front car is close, 
+    * I search a possible adjacent lane using changeLane() function. 
+* To decide the lane is available or not, 
+    * I just checked where is a car on the lane.  
+
 <p align="center">
-    <img src="./image/result.png" width="480" alt="main_image" /><br>
-    <b>result image</b><br>
+    <img src="./result/simulator.png" width="480"><br>
+    <b>Simulator Image</b><br>
+    <img src="./result/result.png" width="480"><br>
+    <b>Result Image</b><br>
 </p>
+
+* Here's a [link to my video result](./result/path-2017-09-21_22.40.41.mp4)
+   
    
 ### Simulator.
 You can download the Term3 Simulator which contains the Path Planning Project from the [releases tab (https://github.com/udacity/self-driving-car-sim/releases).
@@ -92,9 +109,22 @@ A really helpful resource for doing this project and creating smooth trajectorie
     git checkout e94b6e1
     ```
 
-## Reflection
+## Editor Settings
 
-On this kind of highway environment, design of reasonable cost function is better than hybrid A* Algorithm. There are a ton of different maneuvers I can take. I used FSM(finite state machine) to figure out what maneuvers I want to take. I simply set 3 states.  
-"Keep Lane", "Lane Changing Left" , "Lane Changing Right"  
+We've purposefully kept editor configuration files out of this repo in order to
+keep it as simple and environment agnostic as possible. However, we recommend
+using the following settings:
 
-Basically, if a distance of my car and my front car is close, I search a possible adjacent lane using changeLane() function. To decide the lane is available or not, I just checked where is a car on the lane.  
+* indent using spaces
+* set tab width to 2 spaces (keeps the matrices in source code aligned)
+
+## Code Style
+
+Please (do your best to) stick to [Google's C++ style guide](https://google.github.io/styleguide/cppguide.html).
+
+## Project Instructions and Rubric
+
+Note: regardless of the changes you make, your project must be buildable using
+cmake and make!
+
+
